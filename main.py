@@ -1,17 +1,16 @@
 import csv
 import requests
-# from BeautifulSoup import BeautifulSoup
 from pyquery import PyQuery as pq
 
-import json
-
 SW_URL = 'http://www.somewhereinblog.net/blog/'
-BLOG_ID = 'benqt60'
+BLOG_ID = 'zobayrasad'
 
 BLOG_URL = 'http://www.somewhereinblog.net/blog/getProfilePosts/'
 
 POST_ID_LIST = []
  
+MAX_NUMBER = 100
+
 def get_last_post_id():
     if len(POST_ID_LIST)>0:
         return POST_ID_LIST[len(POST_ID_LIST)-1]
@@ -43,15 +42,12 @@ def prepare_post_list(post_links):
     
 def do_post():
     offset = 14
-    table = 'archive_posts'
-    post_url = 
-    
     headers = {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8', 'X-Requested-With':'XMLHttpRequest'}
     
     post_id = get_last_post_id()
     
     BASE = 15
-    for i in enumerate(range(0, 21000, 14)):
+    for i in enumerate(range(0, MAX_NUMBER, 14)):
        if i[0] > 0:
            offset = i[1]+i[0]-1
            postcount = i[1]+i[0]
@@ -70,10 +66,6 @@ def do_post():
 
     print "DONE!!"
 
-    
-    
-def build_form_data():
-    return
     
 def main():
     request_counter = 0
