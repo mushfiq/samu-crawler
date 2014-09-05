@@ -3,7 +3,7 @@ import requests
 from pyquery import PyQuery as pq
 
 SW_URL = 'http://www.somewhereinblog.net/blog/'
-BLOG_ID = 'zobayrasad'
+BLOG_ID = 'zobayrasadgit push -u origin master'
 
 BLOG_URL = 'http://www.somewhereinblog.net/blog/getProfilePosts/'
 
@@ -42,7 +42,8 @@ def prepare_post_list(post_links):
     
 def do_post():
     offset = 14
-    headers = {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8', 'X-Requested-With':'XMLHttpRequest'}
+    headers = {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8', 
+            'X-Requested-With':'XMLHttpRequest'}
     
     post_id = get_last_post_id()
     
