@@ -7,5 +7,8 @@ from scrapy.item import Item, Field
 
 class BlogSpidersItem(Item):
     # define the fields for your item here like:
-    # name = Field()
-    pass
+    title = Field()
+    date = Field()
+    link = Field()
+    description = Field()
+    image = Field()
