@@ -12,3 +12,6 @@ class BlogSpidersItem(Item):
     link = Field()
     description = Field()
     image = Field()
+    
+class ArchiveItem(Item):
+    post_id = Field()
